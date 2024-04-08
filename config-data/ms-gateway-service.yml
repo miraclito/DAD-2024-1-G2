@@ -7,7 +7,7 @@ eureka:
       defaultZone: http://localhost:8090/eureka
   instance:
     hostname: localhost
-    
+
 spring:
   cloud:
     gateway:
@@ -19,3 +19,11 @@ spring:
           uri: lb://ms-catalogo-service
           predicates:
             - Path=/categoria/**
+        - id: ms-clientes-service
+          uri: lb://ms-clientes-service
+          predicates:
+            - Path=/clientes/**
+        - id: ms-pedido-service
+          uri: lb://ms-pedido-service
+          predicates:
+            - Path=/pedido/**

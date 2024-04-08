@@ -1,10 +1,11 @@
 package com.example.mscatalogo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.mscatalogo.repository.CategoriaRepository;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.engine.internal.Cascade;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -16,4 +17,10 @@ public class Productos {
     private String nombre;
     private Number cantidad;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL)
+    private List<Categoria> categorias;
 }
