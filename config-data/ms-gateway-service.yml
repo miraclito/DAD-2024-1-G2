@@ -1,19 +1,11 @@
 server:
   port: 6060
-
-
-
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8090/eureka
   instance:
     hostname: localhost
-
-
-
-
 spring:
   cloud:
     gateway:
