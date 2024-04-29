@@ -13,7 +13,7 @@ public interface CatalogoFeign {
     @GetMapping("/{id}")
     @CircuitBreaker(name = "productoListarPorIdCB", fallbackMethod = "fallBackproductoListarPorIdCB")
 
-    ResponseEntity<ProductoDto> productoBuscarPorId(@PathVariable(required = true) Integer id);
+    public ResponseEntity<ProductoDto> productoBuscarPorId(@PathVariable(required = true) Integer id);
     default ResponseEntity<ProductoDto> fallBackproductoListarPorIdCB(Integer id, Exception e) {
         ProductoDto productoDto =new ProductoDto();
         productoDto.setId(9000000);
