@@ -1,19 +1,16 @@
-package com.example.msclientes.entity;
+package com.example.mspedido.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.print.attribute.standard.NumberOfDocuments;
 import java.util.Date;
 
 @Data
-@Entity
-public class Clientes {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ClienteDto {
+
     private Integer id;
     private String nombre;
     private String DNI;
     private Date Fechadenacimiento;
-
 }

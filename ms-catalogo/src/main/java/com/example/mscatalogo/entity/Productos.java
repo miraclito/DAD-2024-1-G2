@@ -1,6 +1,7 @@
 package com.example.mscatalogo.entity;
 
 import com.example.mscatalogo.repository.CategoriaRepository;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.engine.internal.Cascade;
@@ -17,10 +18,8 @@ public class Productos {
     private String nombre;
     private Number cantidad;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Categoria categoria;
-
-    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL)
-    private List<Categoria> categorias;
 }
