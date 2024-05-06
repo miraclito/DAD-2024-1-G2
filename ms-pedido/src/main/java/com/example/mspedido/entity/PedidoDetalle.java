@@ -20,4 +20,5 @@ public class PedidoDetalle {
         this.cantidad = (double) 0;
         this.precio = (double) 0;
     }
+
 }
