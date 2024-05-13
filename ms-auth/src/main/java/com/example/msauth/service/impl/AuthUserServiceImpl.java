@@ -21,14 +21,6 @@ public class AuthUserServiceImpl implements AuthUserService {
     PasswordEncoder passwordEncoder;
     @Autowired
     JwtProvider jwtProvider;
-
-
-
-
-
-
-
-
     @Override
     public AuthUser save(AuthUserDto authUserDto) {
         Optional<AuthUser> user = authRepository.findByUserName(authUserDto.getUserName());
