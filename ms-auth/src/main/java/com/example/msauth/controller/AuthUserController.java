@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/auts")
+@RequestMapping("/auth")
 public class AuthUserController {
     @Autowired
     AuthUserService authUserService;
